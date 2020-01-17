@@ -1,0 +1,52 @@
+{
+  "courses": [
+    {
+      "id":1,
+      "name": "Medicina"
+    },
+    {
+      "id":2,
+      "name": "Odontologia"
+    },
+    {
+      "id":3,
+      "name": "Direito"
+    },
+    {
+      "id":4,
+      "name": "Psicologia"
+    },
+    {
+      "id":5,
+      "name": "Engenharia mecanica"
+    },
+    {
+      "id":6,
+      "name": "Administração"
+    },
+    {
+      "id":7,
+      "name": "Design"
+    },
+    {
+      "id":8,
+      "name": "Jornalismo"
+    },
+    {
+      "id":9,
+      "name": "Ciencia da Computação"
+    },
+    {
+      "id":10,
+      "name": "Enfermagem"
+    },
+    {
+      "id":11,
+      "name": "Engenharia Eletrica"
+    },
+    {
+      "id":12,
+      "name": "Engenharia Civil"
+    }
+  ]
+}

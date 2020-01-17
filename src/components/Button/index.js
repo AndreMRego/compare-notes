@@ -1,4 +1,5 @@
 import React from 'react';
+import * as MaterialDesign from 'react-icons/md';
 
 import PropTypes from 'prop-types';
 
@@ -6,6 +7,7 @@ import { Container } from './styles';
 
 export default function Button({
   color,
+  icon,
   padding,
   disabled,
   children,
@@ -14,6 +16,7 @@ export default function Button({
   type,
   onClick,
 }) {
+  const Icon = MaterialDesign[icon];
   return (
     <Container
       padding={padding}
@@ -24,6 +27,7 @@ export default function Button({
       onClick={onClick}
       disabled={disabled}
     >
+      {icon && <Icon size={16} color="#FFF" />}
       {children && <span>{children}</span>}
     </Container>
   );
@@ -31,6 +35,7 @@ export default function Button({
 
 Button.propTypes = {
   color: PropTypes.string,
+  icon: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   height: PropTypes.number,
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -42,6 +47,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   color: '#fff',
+  icon: '',
   children: '',
   height: 45,
   width: '100%',
