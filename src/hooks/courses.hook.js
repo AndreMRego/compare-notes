@@ -12,7 +12,11 @@ const fetchCourses = async ({ query, setCourses }) => {
   try {
     const data = await findAll({ query });
 
-    return setCourses(data);
+    const dataFormatted = data.map(curse => ({
+      ...curse,
+      name: curse.nome,
+    }));
+    return setCourses(dataFormatted);
   } catch (error) {}
 };
 

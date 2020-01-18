@@ -7,12 +7,17 @@ import { Container, Table, Card, CardHeader, CardBody } from './styles';
 export default function CoursesList({ data, handleDetails }) {
   function renderData() {
     return data.length ? (
-      data.map(user => (
-        <tr key={user.id}>
-          <td>{user.fullName}</td>
+      data.map((vacancie, index) => (
+        <tr key={index}>
+          <td>{vacancie.estado}</td>
+          <td>{vacancie.faculdade}</td>
+          <td>{vacancie.campus}</td>
+          <td>{vacancie.curso}</td>
+          <td>{vacancie.nota}</td>
+          <td>{vacancie.vagas}</td>
           <td>
-            <button type="button" onClick={() => handleDetails(user.id)}>
-              Show
+            <button type="button" onClick={() => handleDetails(vacancie.id)}>
+              Detalhes
             </button>
           </td>
         </tr>
@@ -26,18 +31,20 @@ export default function CoursesList({ data, handleDetails }) {
 
   function renderCard() {
     return data.length ? (
-      data.map(user => (
-        <Card data-testid="card-list" key={user.id}>
+      data.map(vacancie => (
+        <Card data-testid="card-list" key={vacancie.id}>
           <CardHeader>
-            <h2>{user.fullName}</h2>
-            <span>Age: {user.age}</span>
+            <h2>Curso: {vacancie.curso}</h2>
+            <span>Nota: {vacancie.nota}</span>
+            <span>Vagas: {vacancie.vagas}</span>
+            <span>Campus: {vacancie.campus}</span>
+            <span>Faculdade: {vacancie.faculdade}</span>
+            <span>Estado: {vacancie.estado}</span>
           </CardHeader>
           <CardBody>
-            <span>Description: {user.description}</span>
             <div>
-              <span>checkbox</span>
-              <button type="button" onClick={() => handleDetails(user.id)}>
-                Show
+              <button type="button" onClick={() => handleDetails(vacancie.id)}>
+                Detalhes
               </button>
             </div>
           </CardBody>
@@ -56,13 +63,13 @@ export default function CoursesList({ data, handleDetails }) {
       <Table data-testid="users-list">
         <thead>
           <tr>
-            <th>Cidade/Estado</th>
+            <th>Estado</th>
             <th>Faculdade</th>
             <th>Campus</th>
             <th>Curso</th>
             <th>Nota</th>
             <th>Vagas</th>
-            <th>Actions</th>
+            <th>Ações</th>
           </tr>
         </thead>
         <tbody data-testid="tbody-list">{renderData()}</tbody>

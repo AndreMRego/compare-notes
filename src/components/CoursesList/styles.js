@@ -4,11 +4,24 @@ import { breakpoints } from '~/constants';
 
 export const Container = styled.div`
   display: flex;
-  flex: 1;
+
   width: 100%;
   flex-wrap: wrap;
+  max-height: 130px;
 
   margin: 50px 0;
+
+  @media (max-width: ${breakpoints.md}) {
+    justify-content: center;
+  }
+
+  @media (max-width: ${breakpoints.xs}) {
+    max-height: 50px;
+  }
+
+  @media (max-width: ${breakpoints.xxs}) {
+    max-height: 5px;
+  }
 `;
 export const Table = styled.table`
   display: flex;
@@ -17,8 +30,12 @@ export const Table = styled.table`
 
   background: #fff;
 
-  @media (max-width: 991px) {
+  @media (max-width: 1199px) {
     display: none;
+  }
+
+  tbody {
+    max-height: 100px;
   }
 
   tr {
@@ -37,8 +54,20 @@ export const Table = styled.table`
     padding: 30px 0 20px 0px;
     text-align: left;
 
-    :first-child {
+    &:first-child {
       padding-left: 30px;
+      max-width: 120px;
+    }
+
+    :nth-child(2) {
+      max-width: 150px;
+    }
+
+    :nth-child(3) {
+      max-width: 400px;
+    }
+    :nth-child(4) {
+      padding-left: 20px;
     }
   }
 
@@ -49,8 +78,21 @@ export const Table = styled.table`
     padding: 16px 0;
     border-bottom: 1px solid rgba(224, 224, 224, 1);
 
-    :first-child {
+    &:first-child {
       padding-left: 30px;
+      max-width: 120px;
+    }
+
+    :nth-child(2) {
+      max-width: 150px;
+    }
+
+    :nth-child(3) {
+      max-width: 400px;
+    }
+
+    :nth-child(4) {
+      padding-left: 20px;
     }
 
     button {
@@ -58,11 +100,6 @@ export const Table = styled.table`
       color: #4d85ee;
       font-size: 0.9rem;
       background: transparent;
-
-      &:last-child {
-        color: #de3b3b;
-        margin-left: 20px;
-      }
     }
   }
 `;
@@ -70,20 +107,22 @@ export const Table = styled.table`
 export const Card = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex-grow: 1;
+  max-width: 250px;
   flex-wrap: wrap;
   padding: 10px;
   margin: 20px 5px;
   border-radius: 4px;
+  border: 1px solid #ccc;
 
-  @media (min-width: ${breakpoints.md}) {
+  @media (min-width: ${breakpoints.lg}) {
     display: none;
   }
 
   background: #fff;
 
   span {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     margin: 5px 0;
   }
 
@@ -92,11 +131,6 @@ export const Card = styled.div`
     color: #4d85ee;
     font-size: 0.9rem;
     background: transparent;
-
-    &:last-child {
-      color: #de3b3b;
-      margin-left: 20px;
-    }
   }
 `;
 export const CardHeader = styled.div`
@@ -106,7 +140,7 @@ export const CardHeader = styled.div`
   flex-wrap: wrap;
 
   h2 {
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin: 5px 0;
   }
 `;

@@ -2,11 +2,11 @@ import { toast } from 'react-toastify';
 
 import api from './api';
 
-const ENDPOINT = 'courses';
+const ENDPOINT = 'curso';
 
 export const findAll = async ({ query }) => {
   try {
-    const { data } = await api.get(`${ENDPOINT}?q=${query}`);
+    const { data } = await api.get(`${ENDPOINT}?nome=${query}`);
 
     return data;
   } catch (error) {}

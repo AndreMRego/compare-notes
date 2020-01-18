@@ -2,6 +2,8 @@ import Async from 'react-select/async';
 
 import styled from 'styled-components';
 
+import { breakpoints } from '~/constants';
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -14,6 +16,11 @@ export const Container = styled.div`
     align-self: flex-start;
     margin: 0 0 10px;
     font-weight: bold;
+  }
+
+  @media (max-width: ${breakpoints.sm}) {
+    width: 100%;
+    margin: 0;
   }
 `;
 

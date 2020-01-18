@@ -7,6 +7,7 @@ import Button from '~/components/Button';
 import CoursesList from '~/components/CoursesList';
 import ReactSelect from '~/components/ReactSelect';
 import { useCourses } from '~/hooks/courses.hook';
+import { findAll } from '~/services/vacancies.service';
 
 import {
   Container,
@@ -51,12 +52,12 @@ export default function Main({ history }) {
   }, [openCourses]);
 
   function handleDetails(id) {
-    history.push(`users/${id}`);
+    /*  history.push(`users/${id}`); */
   }
 
-  function handleSubmit(data) {
-    /* dispatch(signInRequest(email, password)); */
-    console.log(data);
+  async function handleSubmit({ curso_id, red, cnt, cht, lct, mt }) {
+    const data = await findAll({ curse: curso_id, red, cnt, cht, lct, mt });
+    setVacancies(data);
     setOpenCourses(!openCourses);
   }
 
