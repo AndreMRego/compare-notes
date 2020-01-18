@@ -2,9 +2,9 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import { Container, Table, Card, CardHeader, CardBody } from './styles';
+import { Container, Table, Card, CardHeader } from './styles';
 
-export default function CoursesList({ data, handleDetails }) {
+export default function CoursesList({ data }) {
   function renderData() {
     return data.length ? (
       data.map((vacancie, index) => (
@@ -15,11 +15,6 @@ export default function CoursesList({ data, handleDetails }) {
           <td>{vacancie.curso}</td>
           <td>{vacancie.nota}</td>
           <td>{vacancie.vagas}</td>
-          <td>
-            <button type="button" onClick={() => handleDetails(vacancie.id)}>
-              Detalhes
-            </button>
-          </td>
         </tr>
       ))
     ) : (
@@ -41,13 +36,6 @@ export default function CoursesList({ data, handleDetails }) {
             <span>Faculdade: {vacancie.faculdade}</span>
             <span>Estado: {vacancie.estado}</span>
           </CardHeader>
-          <CardBody>
-            <div>
-              <button type="button" onClick={() => handleDetails(vacancie.id)}>
-                Detalhes
-              </button>
-            </div>
-          </CardBody>
         </Card>
       ))
     ) : (
@@ -69,7 +57,6 @@ export default function CoursesList({ data, handleDetails }) {
             <th>Curso</th>
             <th>Nota</th>
             <th>Vagas</th>
-            <th>Ações</th>
           </tr>
         </thead>
         <tbody data-testid="tbody-list">{renderData()}</tbody>

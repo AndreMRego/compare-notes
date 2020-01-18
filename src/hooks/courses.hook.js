@@ -31,5 +31,5 @@ export function useCourses({ query }) {
     fetchCourses({ query, setCourses });
   }, [query]);
 
-  return [courses, setCourses];
+  return courses;
 }

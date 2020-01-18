@@ -36,10 +36,10 @@ const schema = Yup.object().shape({
     'A nota de Matemática e suas Tecnologias é obrigatória'
   ),
 });
-export default function Main({ history }) {
+export default function Main() {
   const [course, setCourse] = useState({});
   const [query, setQuery] = useState('');
-  const [courses, setCourses] = useCourses({ query });
+  const courses = useCourses({ query });
 
   const [openCourses, setOpenCourses] = useState(false);
   const [vacancies, setVacancies] = useState([]);
@@ -51,14 +51,10 @@ export default function Main({ history }) {
     }
   }, [openCourses]);
 
-  function handleDetails(id) {
-    /*  history.push(`users/${id}`); */
-  }
-
   async function handleSubmit({ curso_id, red, cnt, cht, lct, mt }) {
     const data = await findAll({ curse: curso_id, red, cnt, cht, lct, mt });
     setVacancies(data);
-    setOpenCourses(!openCourses);
+    setOpenCourses(true);
   }
 
   return (
@@ -106,9 +102,7 @@ export default function Main({ history }) {
         </ButtonWrapper>
       </CustomForm>
 
-      {openCourses && (
-        <CoursesList handleDetails={handleDetails} data={vacancies} />
-      )}
+      {openCourses && <CoursesList data={vacancies} />}
     </Container>
   );
 }

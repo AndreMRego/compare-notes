@@ -1,5 +1,3 @@
-import { toast } from 'react-toastify';
-
 import api from './api';
 
 const ENDPOINT = 'mediacurso';
