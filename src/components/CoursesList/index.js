@@ -11,10 +11,11 @@ export default function CoursesList({ data }) {
         <tr key={index}>
           <td>{vacancie.estado}</td>
           <td>{vacancie.faculdade}</td>
-          <td>{vacancie.campus}</td>
+          <td>{vacancie.cidade}</td>
           <td>{vacancie.curso}</td>
           <td>{vacancie.nota}</td>
           <td>{vacancie.vagas}</td>
+          <td>{vacancie.vagaAmplaConcorrencia}</td>
         </tr>
       ))
     ) : (
@@ -32,7 +33,10 @@ export default function CoursesList({ data }) {
             <h2>Curso: {vacancie.curso}</h2>
             <span>Minha Média: {vacancie.nota}</span>
             <span>Vagas: {vacancie.vagas}</span>
-            <span>Campus: {vacancie.campus}</span>
+            <span>
+              Vagas Ampla Concorrência : {vacancie.vagaAmplaConcorrencia}
+            </span>
+            <span>Cidade: {vacancie.cidade}</span>
             <span>Faculdade: {vacancie.faculdade}</span>
             <span>Estado: {vacancie.estado}</span>
           </CardHeader>
@@ -53,10 +57,11 @@ export default function CoursesList({ data }) {
           <tr>
             <th>Estado</th>
             <th>Faculdade</th>
-            <th>Campus</th>
+            <th>Cidade</th>
             <th>Curso</th>
             <th>Nota</th>
             <th>Vagas</th>
+            <th>Vagas Ampla Concorrência</th>
           </tr>
         </thead>
         <tbody data-testid="tbody-list">{renderData()}</tbody>

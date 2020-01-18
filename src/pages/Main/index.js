@@ -66,7 +66,7 @@ export default function Main() {
         <Row>
           <ReactSelect
             name="curso_id"
-            label="CURSO"
+            label="Curso"
             value={course}
             onInputChange={value => setQuery(value)}
             placeholder="Selecione o curso"
@@ -97,7 +97,7 @@ export default function Main() {
 
         <ButtonWrapper>
           <Button width={142} color="#7159C1" type="submit">
-            Pesquisar cursos
+            Pesquisar Faculdades
           </Button>
         </ButtonWrapper>
       </CustomForm>

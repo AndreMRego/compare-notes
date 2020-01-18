@@ -2,12 +2,15 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
+import GA from '~/utils/GoogleAnalytics';
+
 import Routes from './routes';
 import GlobalStyle from './styles/global';
 
 function App() {
   return (
     <BrowserRouter>
+      {GA.init() && <GA.RouteTracker />}
       <Routes />
       <GlobalStyle />
       <ToastContainer autoClose={3000} />
