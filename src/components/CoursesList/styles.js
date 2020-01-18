@@ -34,8 +34,13 @@ export const Table = styled.table`
     display: none;
   }
 
+  thead {
+    border: 1px solid rgba(224, 224, 224, 1);
+  }
+
   tbody {
-    max-height: 100px;
+    border-left: 1px solid rgba(224, 224, 224, 1);
+    border-right: 1px solid rgba(224, 224, 224, 1);
   }
 
   tr {

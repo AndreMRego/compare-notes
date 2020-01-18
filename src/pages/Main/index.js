@@ -60,7 +60,7 @@ export default function Main() {
   return (
     <Container>
       <TopHeader>
-        <h2>Compare sua nota do ENEM</h2>
+        <h2>Média do ENEM por Curso e Faculdade</h2>
       </TopHeader>
       <CustomForm schema={schema} onSubmit={handleSubmit}>
         <Row>

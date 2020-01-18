@@ -30,7 +30,7 @@ export default function CoursesList({ data }) {
         <Card data-testid="card-list" key={vacancie.id}>
           <CardHeader>
             <h2>Curso: {vacancie.curso}</h2>
-            <span>Nota: {vacancie.nota}</span>
+            <span>Minha Média: {vacancie.nota}</span>
             <span>Vagas: {vacancie.vagas}</span>
             <span>Campus: {vacancie.campus}</span>
             <span>Faculdade: {vacancie.faculdade}</span>
