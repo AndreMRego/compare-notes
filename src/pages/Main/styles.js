@@ -29,7 +29,7 @@ export const Container = styled.div`
 
 export const TopHeader = styled.div`
   display: flex;
-  margin: 100px 0 20px 0;
+  margin-top: 100px;
 
   align-items: center;
   justify-content: space-between;
@@ -39,7 +39,11 @@ export const TopHeader = styled.div`
   }
 
   @media (max-width: ${breakpoints.xxs}) {
-    margin-top: 80%;
+    margin-top: 35%;
+
+    > h2 {
+      text-align: center;
+    }
   }
 `;
 
@@ -64,6 +68,7 @@ export const Column = styled.div`
 
   @media (max-width: ${breakpoints.sm}) {
     width: 100%;
+    min-height: 95px;
   }
 
   & + & {
