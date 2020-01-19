@@ -34,8 +34,8 @@ export default function CoursesList({ data }) {
             <h2>Faculdade: {vacancie.faculdade}</h2>
             <span>Cidade: {vacancie.cidade}</span>
             <span>Média: {vacancie.nota}</span>
-            {vacancie.notaCotaRegional !== null && (
-              <span>Nota de Corte (Regional): {vacancie.notaCotaRegional}</span>
+            {vacancie.notaCotaRegional !== '-' && (
+              <span>Nota (bônus regional): {vacancie.notaCotaRegional}</span>
             )}
             <span>Vagas: {vacancie.vagas}</span>
             <span>
@@ -64,7 +64,7 @@ export default function CoursesList({ data }) {
             <th>Cidade</th>
             <th>Curso</th>
             <th>Nota</th>
-            <th>Nota de Corte (Regional)</th>
+            <th>Nota (bônus regional)</th>
             <th>Vagas</th>
             <th>Vagas Ampla Concorrência</th>
           </tr>

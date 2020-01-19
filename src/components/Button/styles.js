@@ -39,8 +39,8 @@ export const Container = styled.button.attrs(props => ({
     font-size: 0.8rem;
     font-weight: bold;
   }
-  @media (max-width: ${breakpoints.xxs}) {
+  /* @media (max-width: ${breakpoints.xxs}) {
     margin: 0 0 5em 0;
     color: #444;
-  }
+  } */
 `;

@@ -23,14 +23,14 @@ export const Container = styled.div`
     margin-right: 0;
   }
 
-  @media (max-width: ${breakpoints.xxs}) {
+ /*  @media (max-width: ${breakpoints.xxs}) {
     margin: 0 0 70px 0;
-  }
+  } */
 `;
 
 export const AsyncWrapper = styled(Async)`
   min-width: 150px;
-  margin-bottom: 20px;
+
   background: #fff;
   .react-select__control {
     background: transparent;
@@ -40,9 +40,10 @@ export const AsyncWrapper = styled(Async)`
     outline: initial !important;
 
     @media (max-width: ${breakpoints.xxs}) {
+      padding: 0;
       max-height: 4vh;
     }
-    max-height: 5vh;
+    height: 38px;
 
     background: transparent;
   }

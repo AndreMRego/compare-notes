@@ -19,12 +19,12 @@ export const Wrapper = styled(Form)`
   }
 
   input {
-    height: 50px;
+    height: 38px;
     border: 1px solid #ddd;
     padding: 0 15px;
     border-radius: 4px;
     background: #fff;
-    margin: 0 0 20px;
+    /* margin: 0 0 20px; */
     width: 100%;
 
     &::placeholder {
@@ -40,6 +40,7 @@ export const Wrapper = styled(Form)`
   }
 
   @media (max-width: ${breakpoints.xxs}) {
-    margin: 0 0 10em 0;
+    margin: 2em 0 0 0;
+    display: block;
   }
 `;

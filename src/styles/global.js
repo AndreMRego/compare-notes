@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 import 'react-toastify/dist/ReactToastify.css';
+import { breakpoints } from '~/constants';
 
 export default createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
@@ -24,6 +25,10 @@ export default createGlobalStyle`
     font: 14px 'Roboto', sans-serif;
     color: #444444;
     background: #f5f5f5;
+
+    @media (max-width: ${breakpoints.xs}) {  
+      background: #fff;
+    }
   }
   a {
     text-decoration: none;

@@ -21,7 +21,7 @@ export const Container = styled.div`
 
   @media (max-width: ${breakpoints.xxs}) {
     max-height: 5px;
-    margin-top: 300px;
+    /*  margin-top: 300px; */
   }
 `;
 export const Table = styled.table`
