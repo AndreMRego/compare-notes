@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
-import { Input } from '@rocketseat/unform';
-import * as Yup from 'yup';
+/* import { Input } from '@rocketseat/unform';
+ */ import * as Yup from 'yup';
 
 import Button from '~/components/Button';
 import CoursesList from '~/components/CoursesList';
 import Form from '~/components/Form';
+import Input from '~/components/Input';
 import ReactSelect from '~/components/ReactSelect';
 import { useCourses } from '~/hooks/courses.hook';
 import { findAll } from '~/services/vacancies.service';

@@ -32,6 +32,10 @@ export const AsyncWrapper = styled(Async)`
   min-width: 150px;
 
   background: #fff;
+
+  @media (max-width: 768px) {
+    margin-bottom: 10px;
+  }
   .react-select__control {
     background: transparent;
   }
