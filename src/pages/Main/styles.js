@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-import Form from '~/components/Form';
 import { breakpoints } from '~/constants';
 
 export const Container = styled.div`
@@ -38,18 +37,24 @@ export const TopHeader = styled.div`
     font-size: 1.3rem;
     text-align: center;
   }
-`;
 
-export const CustomForm = styled(Form)``;
+  @media (max-width: ${breakpoints.xxs}) {
+    margin: 50px 0;
+  }
+`;
 
 export const Row = styled.div`
   display: flex;
-  flex: 1;
+
   justify-content: space-between;
   align-items: center;
 
   @media (max-width: ${breakpoints.sm}) {
     flex-direction: column;
+  }
+
+  @media (max-width: ${breakpoints.xxs}) {
+    margin: 0 0 144px 0;
   }
 `;
 
@@ -61,7 +66,7 @@ export const Column = styled.div`
 
   @media (max-width: ${breakpoints.sm}) {
     width: 100%;
-    min-height: 95px;
+    min-height: 80px;
   }
 
   & + & {
@@ -84,4 +89,8 @@ export const ButtonWrapper = styled.div`
   flex-direction: column;
   flex: 1;
   align-items: center;
+
+  @media (max-width: ${breakpoints.xxs}) {
+    margin-top: 20px;
+  }
 `;

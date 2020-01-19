@@ -1,13 +1,15 @@
 import { Form } from '@rocketseat/unform';
 import styled from 'styled-components';
 
+import { breakpoints } from '~/constants';
+
 export const Wrapper = styled(Form)`
   display: flex;
   flex-direction: column;
   width: 100%;
 
-  padding: 30px;
-  background: #fff;
+  padding: 15px 30px;
+  /* background: #fff; */
 
   label {
     color: #444;
@@ -35,5 +37,9 @@ export const Wrapper = styled(Form)`
     align-self: flex-start;
     margin: 0 0 10px;
     font-weight: bold;
+  }
+
+  @media (max-width: ${breakpoints.xxs}) {
+    margin: 0 0 10em 0;
   }
 `;

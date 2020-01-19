@@ -9,7 +9,7 @@ export const Container = styled.div`
   flex-wrap: wrap;
   max-height: 130px;
 
-  margin: 50px 0;
+  margin-top: 50px;
 
   @media (max-width: ${breakpoints.md}) {
     justify-content: center;
@@ -21,6 +21,7 @@ export const Container = styled.div`
 
   @media (max-width: ${breakpoints.xxs}) {
     max-height: 5px;
+    margin-top: 300px;
   }
 `;
 export const Table = styled.table`

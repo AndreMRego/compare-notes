@@ -5,18 +5,12 @@ import * as Yup from 'yup';
 
 import Button from '~/components/Button';
 import CoursesList from '~/components/CoursesList';
+import Form from '~/components/Form';
 import ReactSelect from '~/components/ReactSelect';
 import { useCourses } from '~/hooks/courses.hook';
 import { findAll } from '~/services/vacancies.service';
 
-import {
-  Container,
-  TopHeader,
-  CustomForm,
-  Row,
-  Column,
-  ButtonWrapper,
-} from './styles';
+import { Container, TopHeader, Row, Column, ButtonWrapper } from './styles';
 
 const schema = Yup.object().shape({
   curso_id: Yup.number()
@@ -62,7 +56,7 @@ export default function Main() {
       <TopHeader>
         <h2>Média do ENEM por Curso e Faculdade</h2>
       </TopHeader>
-      <CustomForm schema={schema} onSubmit={handleSubmit}>
+      <Form schema={schema} onSubmit={handleSubmit}>
         <Row>
           <ReactSelect
             name="curso_id"
@@ -80,18 +74,18 @@ export default function Main() {
         </Row>
         <Row>
           <Column>
-            <Input label="Ciências da Natureza e suas Tecnologias" name="cnt" />
+            <Input label="Ciências da Natureza" name="cnt" />
           </Column>
           <Column>
-            <Input label="Ciências Humanas e suas Tecnologias" name="cht" />
+            <Input label="Ciências Humanas" name="cht" />
           </Column>
         </Row>
         <Row>
           <Column>
-            <Input label="Linguagens, Códigos e suas Tecnologias" name="lct" />
+            <Input label="Linguagens, Códigos" name="lct" />
           </Column>
           <Column>
-            <Input label="Matemática e suas Tecnologias" name="mt" />
+            <Input label="Matemática" name="mt" />
           </Column>
         </Row>
 
@@ -100,7 +94,7 @@ export default function Main() {
             Pesquisar Faculdades
           </Button>
         </ButtonWrapper>
-      </CustomForm>
+      </Form>
 
       {openCourses && <CoursesList data={vacancies} />}
     </Container>

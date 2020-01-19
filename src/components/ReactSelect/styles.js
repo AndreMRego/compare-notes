@@ -8,6 +8,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
+  width: 100%;
 
   margin-right: 25px;
 
@@ -19,22 +20,29 @@ export const Container = styled.div`
   }
 
   @media (max-width: ${breakpoints.sm}) {
-    width: 100%;
-    margin: 0;
+    margin-right: 0;
+  }
+
+  @media (max-width: ${breakpoints.xxs}) {
+    margin: 0 0 70px 0;
   }
 `;
 
 export const AsyncWrapper = styled(Async)`
   min-width: 150px;
   margin-bottom: 20px;
-
+  background: #fff;
   .react-select__control {
     background: transparent;
   }
 
   .react-select__value-container {
     outline: initial !important;
-    max-height: 45px;
+
+    @media (max-width: ${breakpoints.xxs}) {
+      max-height: 4vh;
+    }
+    max-height: 5vh;
 
     background: transparent;
   }
