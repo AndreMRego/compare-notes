@@ -36,14 +36,7 @@ export const TopHeader = styled.div`
 
   > h2 {
     font-size: 1.3rem;
-  }
-
-  @media (max-width: ${breakpoints.xxs}) {
-    margin-top: 35%;
-
-    > h2 {
-      text-align: center;
-    }
+    text-align: center;
   }
 `;
 
