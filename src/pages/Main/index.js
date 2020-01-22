@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-/* import { Input } from '@rocketseat/unform';
- */ import * as Yup from 'yup';
+import * as Yup from 'yup';
 
 import Button from '~/components/Button';
 import CoursesList from '~/components/CoursesList';
@@ -10,6 +9,7 @@ import Input from '~/components/Input';
 import ReactSelect from '~/components/ReactSelect';
 import { useCourses } from '~/hooks/courses.hook';
 import { findAll } from '~/services/vacancies.service';
+import { filterFloat } from '~/utils/checkNumber';
 
 import { Container, TopHeader, Row, Column, ButtonWrapper } from './styles';
 
@@ -48,7 +48,17 @@ export default function Main() {
 
   async function handleSubmit({ curso_id, red, cnt, cht, lct, mt }) {
     const data = await findAll({ curse: curso_id, red, cnt, cht, lct, mt });
-    setVacancies(data);
+    const dataFormatted = data.map(obj => ({
+      ...obj,
+      nota: parseFloat(obj.nota).toFixed(2),
+      notaCotaRegional:
+        obj.notaCotaRegional !== '-'
+          ? parseFloat(obj.notaCotaRegional).toFixed(2)
+          : obj.notaCotaRegional,
+      diferencaNotaNormal: filterFloat(obj.diferencaNotaNormal).toFixed(2),
+      diferencaNotaRegional: filterFloat(obj.diferencaNotaRegional).toFixed(2),
+    }));
+    setVacancies(dataFormatted);
     setOpenCourses(true);
   }
 

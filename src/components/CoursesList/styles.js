@@ -127,16 +127,26 @@ export const Card = styled.div`
 
   background: #fff;
 
-  span {
-    font-size: 0.9rem;
-    margin: 5px 0;
-  }
-
   button {
     border: 0;
     color: #4d85ee;
     font-size: 0.9rem;
     background: transparent;
+  }
+`;
+
+export const CardValue = styled.div`
+  margin-bottom: 4px;
+
+  span {
+    font-size: 0.9rem;
+    margin: 5px 0;
+    color: ${props =>
+      props.colorCorteNote
+        ? props.colorCorteNote
+        : props.colorCorteRegional
+        ? props.colorCorteRegional
+        : '#444444'};
   }
 `;
 export const CardHeader = styled.div`

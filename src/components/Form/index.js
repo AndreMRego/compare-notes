@@ -29,3 +29,10 @@ Form.propTypes = {
   onSubmit: PropTypes.func,
   children: PropTypes.array,
 };
+
+Form.defaultProps = {
+  initialData: {},
+  schema: {},
+  onSubmit: () => {},
+  children: [],
+};
