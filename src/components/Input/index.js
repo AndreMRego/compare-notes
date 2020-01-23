@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import InputMask from 'react-input-mask';
+import NumberFormat from 'react-number-format';
 
 import { useField } from '@rocketseat/unform';
 import PropTypes from 'prop-types';
@@ -10,7 +10,8 @@ export default function Input({ name, label }) {
   const [value, setValue] = useState(defaultValue);
 
   function parseInputValue(inputRef) {
-    const inputValue = inputRef.value;
+    const inputValue = inputRef.props.value;
+    console.log(inputRef);
     return inputValue || '';
   }
 
@@ -28,14 +29,13 @@ export default function Input({ name, label }) {
   return (
     <>
       {label && <label htmlFor={fieldName}>{label}</label>}
-      <InputMask
-        value={value || ''}
+      <NumberFormat
+        value={value}
+        max={1000}
         onChange={e => setValue(e.target.value)}
         id={fieldName}
         name={fieldName}
         ref={ref}
-        mask="9999"
-        maskPlaceholder={null}
       />
       {error && <span>{error}</span>}
     </>

@@ -22,10 +22,6 @@ export const Container = styled.div`
   @media (max-width: ${breakpoints.sm}) {
     margin-right: 0;
   }
-
- /*  @media (max-width: ${breakpoints.xxs}) {
-    margin: 0 0 70px 0;
-  } */
 `;
 
 export const AsyncWrapper = styled(Async)`
