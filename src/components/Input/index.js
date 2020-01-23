@@ -11,7 +11,7 @@ export default function Input({ name, label }) {
 
   function parseInputValue(inputRef) {
     const inputValue = inputRef.props.value;
-    console.log(inputRef);
+
     return inputValue || '';
   }
 
